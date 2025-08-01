@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>จองห้องพัก</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Kanit', sans-serif;
+      line-height: 1.6;
+      background: #f4f6f8;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      margin-left: 25px;
+      font-size: 17px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    /* Hero Section */
+    .hero {
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 70px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .search-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px 30px;
+      border-radius: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      max-width: 900px;
+      width: 90%;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+    }
+
+    .search-box input,
+    .search-box select {
+      flex: 1 1 200px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .search-box button {
+      background: #0071f3;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .search-box button:hover {
+      background: #005dd1;
+      transform: scale(1.03);
+    }
+
+    /* Promos */
+    .promos {
+      padding: 70px 20px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .promos h2 {
+      font-size: 34px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .promo-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .promo-item {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .promo-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .promo-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .promo-item .info {
+      padding: 15px;
+      font-size: 17px;
+      color: #444;
+    }
+
+    /* Footer */
+    .footer {
+      background: #222;
+      color: #ddd;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer small {
+      display: block;
+      margin-top: 10px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .search-box {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-2e5c-61f8-afaa-5c845c0a8cad/raw?se=2025-08-01T17%3A39%3A22Z&sp=r&sv=2024-08-04&sr=b&scid=702f5606-8d53-5882-94f4-cdf946e50c2f&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-01T16%3A03%3A15Z&ske=2025-08-02T16%3A03%3A15Z&sks=b&skv=2024-08-04&sig=vCjxNCOKrLKKTmMthoIkTXBQmwUbJOtVIT6JTTwauA8%3D" alt="LogoFastTravel">
+      <div class="logo">Fast Travel</div>
+    </div>
+    <nav class="nav-links">
+      <a href="Web.html">Home</a>
+      <a href="HotelPage2.html">Room</a>
+      <a href="hotel3.html">Promotion</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>ค้นหาห้องพักทั่วโลก</h1>
+    <form class="search-box" action="#" method="get">
+      <input type="text" name="destination" placeholder="ปลายทาง / เมือง" required />
+      <input type="date" name="checkin" required />
+      <input type="date" name="checkout" required />
+      <select name="guests" required>
+        <option value="">จำนวนผู้เข้าพัก</option>
+        <option value="1">1 คน</option>
+        <option value="2">2 คน</option>
+        <option value="3">3 คน</option>
+        <option value="4">4 คน</option>
+        <option value="5">5 คนขึ้นไป</option>
+      </select>
+      <button type="submit">ค้นหา</button>
+    </form>
+  </section>
+
+  <!-- Promos -->
+  <section class="promos">
+    <h2>โปรโมชั่นยอดนิยม</h2>
+    <div class="promo-items">
+      <a href="HotelPage2.html" class="promo-item">
+        <img src="https://pix8.agoda.net/hotelImages/23039000/0/6a4d020dd6d5ae1326cec7a1c8dafe15.jpg?ca=17&ce=1&s=1024x"  alt="Beach hotel">
+        <div class="info">โรงแรมริมทะเล</div>
+      </a>
+      <a href="HotelPage2.html" class="promo-item">
+        <img src="https://pix8.agoda.net/hotelImages/38133560/0/c3f90f91c9993527360230dd6e2399c5.jpg?ce=0&s=1024x" alt="City view">
+        <div class="info">โรงแรมในเมือง</div>
+      </a>
+      <a href="HotelPage2.html" class="promo-item">
+        <img src="https://pix8.agoda.net/hotelImages/289307/-1/b744a919b869248e7dc138896192be16.jpg?ce=0&s=1024x" alt="Mountain hotel">
+        <div class="info">รีสอร์ตบนภูเขา</div>
+      </a>
+      <a href="HotelPage2.html" class="promo-item">
+        <img src="https://pix8.agoda.net/hotelImages/10629/-1/71c039c179abc26a3ef12cca5e97e6ab.jpg?ca=11&ce=1&s=1024x" alt="Luxury hotel">
+        <div class="info">โรงแรมหรู</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div>© 2025 Fast Travel.</div>
+    <small>enjoy your trip ❤️</small>
+  </footer>
+
+</body>
+</html>

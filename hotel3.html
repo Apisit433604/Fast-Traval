@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Block 0 */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    header img {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #2c3e50;
+    }
+
+    /* Block 1 */
+    .room-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin: 30px 0;
+    }
+
+    .room-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      height: 150px;
+    }
+
+    /* Block 2 */
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-buttons button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Block 3 */
+    .hotel-info {
+      background-color: #ecf0f1;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .hotel-info h2 {
+      margin-bottom: 10px;
+    }
+
+    /* Block 4 */
+    .room-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .room-card {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .room-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .room-card .content {
+      padding: 15px;
+    }
+
+    .room-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .room-card p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .room-card .price {
+      color: #e74c3c;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .room-card button {
+      width: 100%;
+      padding: 10px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .room-card button:hover {
+      background-color: #1e8449;
+    }
+     /* Navbar */
+    .navbar {
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      margin-left: 25px;
+      font-size: 17px;
+      color: #fff;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: #e3e7e8;
+    }
+  </style>
+</head>
+<body>
+   <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-2e5c-61f8-afaa-5c845c0a8cad/raw?se=2025-08-01T17%3A39%3A22Z&sp=r&sv=2024-08-04&sr=b&scid=702f5606-8d53-5882-94f4-cdf946e50c2f&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-01T16%3A03%3A15Z&ske=2025-08-02T16%3A03%3A15Z&sks=b&skv=2024-08-04&sig=vCjxNCOKrLKKTmMthoIkTXBQmwUbJOtVIT6JTTwauA8%3D" alt="LogoFastTravel">
+      <div class="logo">Fast Travel</div>
+    </div>
+    <nav class="nav-links">
+      <a href="Web.html">Home</a>
+      <a href="HotelPage2.html">Room</a>
+      <a href="hotel3.html">Promotion</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container-fluid">
+
+    <!-- Block 0 -->
+    <header>
+      <img src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-2e5c-61f8-afaa-5c845c0a8cad/raw?se=2025-07-27T08%3A26%3A05Z&sp=r&sv=2024-08-04&sr=b&scid=edd2aed6-224b-5b87-9491-4485a0711702&skoid=5c72dd08-68ae-4091-b4e1-40ccec0693ae&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-26T19%3A40%3A44Z&ske=2025-07-27T19%3A40%3A44Z&sks=b&skv=2024-08-04&sig=RuWTd0kNX75nSk9i6NQhPDaHPdtWR%2Bv1M4kDw02JCcw%3D" alt="logo">
+      <h1>Fast Traval</h1>
+    </header>
+
+    <!-- Block 1 -->
+    <div class="room-gallery">
+      <img src="https://pix8.agoda.net/property/46561106/0/21ce5198b4c343c6c6642f54d18327fe.jpeg?ce=2&s=1024x" alt="">
+      <img src="https://pix8.agoda.net/property/72136083/0/9e6ccfa96c4106f242a9ddbfad8a5cb2.jpeg?ce=2&s=1024x" alt="">
+      <img src="https://pix8.agoda.net/property/46561106/0/990e4aa9fc31a9a53590103a275583db.jpeg?ce=2&s=600x" alt="">
+      <img src="https://pix8.agoda.net/property/46561106/0/ed7ebc3ccb60188daad65b35bf761212.jpeg?ce=2&s=600x" alt="">
+      <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/668076208.jpg?k=38937fc368d5c1695ad5fd4e5764ed367d162aa67be1933ece1043d5bfe53c74&o=&s=600x" alt="">
+      <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/668076266.jpg?k=fa53783cc46bd15e48c0fc99ac5170f0fc63fce47f9068fbc46351c951d37f4e&o=&s=600x" alt="">
+    <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/668076313.jpg?k=2ee44f2f0f14d328041a01412b9f4afcaefebe139ad1f842e7618936b2e2a844&o=&s=600x" alt="">
+    <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/668076266.jpg?k=fa53783cc46bd15e48c0fc99ac5170f0fc63fce47f9068fbc46351c951d37f4e&o=&s=600x" alt="">
+    
+    </div>
+
+    <!-- Block 2 -->
+    <div class="nav-buttons">
+      <button>รายละเอียดห้องพัก</button>
+      <button>ห้องพัก</button>
+      <button>รีวิว</button>
+      <button>ตำแหน่งที่ตั้ง</button>
+      <button>ราคาเริ่มต้น</button>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="hotel-info">
+      <h2>โรงแรมแฮปปี้สเตย์ (Happy Stay Hotel)</h2>
+      <p>123 ถนนสุขุมวิท, เขตเมือง, จังหวัดชลบุรี 20000</p>
+    </div>
+
+    <!-- Block 4 -->
+    <div class="room-types">
+      <div class="room-card">
+        <img src="https://pix8.agoda.net/property/52276131/0/403279b09caed16261fd2a661a583616.jpeg?ce=0&s=1024x" alt="">
+        <div class="content">
+          <h3>ห้องธรรมดา</h3>
+          <p>เตียงเดี่ยว, WiFi ฟรี, ทีวี, ห้องน้ำในตัว</p>
+          <div class="price">฿900 / คืน</div>
+            <a href="hotels.html"><button>จองห้อง</button></a>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="https://images.trvl-media.com/lodging/11000000/10450000/10446900/10446837/bec39213.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium" alt="">
+        <div class="content">
+          <h3>ห้องดีลักซ์</h3>
+          <p>เตียงควีนไซส์, วิวเมือง, อาหารเช้า</p>
+          <div class="price">฿1,500 / คืน</div>
+          <a href="hotels.html"><button>จองห้อง</button></a>
+        </div>
+      </div>
+
+      <div class="room-card">
+        <img src="https://www.avistahideawayphuketresort.com/wp-content/uploads/sites/42/2023/05/Duplex-suites-with-whirlpool-bath-002.jpg" alt="">
+        <div class="content">
+          <h3>ห้องสวีท</h3>
+          <p>เตียงคิงไซส์, ห้องนั่งเล่น, อ่างจากุซซี่</p>
+          <div class="price">฿2,300 / คืน</div>
+          <a href="hotels.html"><button>จองห้อง</button></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

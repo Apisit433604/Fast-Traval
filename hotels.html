@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์มการจองโรงแรม</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            font-weight: bold;
+        }
+        .required {
+            color: red;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin-top: -5px;
+            margin-bottom: 15px;
+        }
+        .email-note {
+            font-size: 12px;
+            color: #666;
+            margin-top: -5px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .no-payment {
+            color: green;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .next-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .next-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+  
+</head>
+<body>
+    <form>
+        <h2>ผู้เข้าพักหลัก</h2>
+        
+        <label for="firstName">ชื่อ<span class="required">*</span></label>
+        <input type="text" id="firstName" name="firstName" required>
+        
+        <label for="lastName">นามสกุล<span class="required">*</span></label>
+        <input type="text" id="lastName" name="lastName" required>
+        
+        <label for="email">อีเมล<span class="required">*</span></label>
+        <input type="email" id="email" name="email" required>
+        <div class="email-note">หากท่านกรอกอีเมลแล้วแต่ไม่ได้ดำเนินการจองให้เสร็จสมบูรณ์ เราอาจส่งการแจ้งเตือนไปให้ท่านเพื่ออำนวยความสะดวกในการดำเนินการจองต่อ</div>
+        
+        <label for="country">ประเทศ/เขตปกครองที่พักอาศัย<span class="required">*</span></label>
+        <select id="country" name="country" required>
+            <option value="" selected disabled>-- กรุณาเลือกประเทศ/เขตปกครอง --</option>
+            <option value="thailand">ประเทศไทย</option>
+            <option value="usa">สหรัฐอเมริกา</option>
+            <option value="uk">สหราชอาณาจักร</option>
+            <option value="japan">ญี่ปุ่น</option>
+            <option value="china">จีน</option>
+            <option value="other">อื่นๆ</option>
+        </select>
+        
+        <label for="phone">หมายเลขโทรศัพท์<span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <div class="no-payment">ไม่ต้องจ่ายทันที ฿0 วันนี้</div>
+        
+        <a href="Web.html">
+            <button type="button" class="next-button">ยืนยันการจอง</button>
+        </a>
+        
+    </form>
+</body>
+</html>

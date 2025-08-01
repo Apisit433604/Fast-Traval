@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>รายการโรงแรม</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar {
+      background: #000;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      margin-left: 25px;
+      font-size: 17px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+
+    .sidebar-filter {
+      width: 25%;
+      padding: 75px;
+      background-color: #eef5ff;
+      border-right: 1px solid #ddd;
+      height: 100vh;
+      box-sizing: border-box;
+      overflow-y: auto;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    .filter-section {
+      margin-bottom: 20px;
+    }
+
+    .filter-section h4,
+    .price-range h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    input[type="number"] {
+      width: 48%;
+      padding: 6px;
+      margin-right: 2%;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .main-content {
+      margin-left: 25%;
+      padding: 100px 20px;
+      width: 75%;
+      background-color: #ffffff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #007bff;
+    }
+
+    .hotel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hotel-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .hotel-card:hover {
+      transform: scale(1.01);
+    }
+
+    .hotel-image {
+      width: 40%;
+      object-fit: cover;
+    }
+
+    .hotel-info {
+      padding: 20px;
+      width: 60%;
+    }
+
+    .hotel-name {
+      font-size: 22px;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .hotel-description {
+      color: #000000;
+      margin-bottom: 15px;
+    }
+
+    .hotel-Address {
+      color: #000000;
+      margin-bottom: 15px;
+    }
+    .hotel-price {
+      font-weight: bold;
+      color: green;
+      font-size: 18px;
+    }
+
+    .book-btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .book-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .Menu-Button {
+      display: inline-block;
+      color: white;
+      padding: 10px 40px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+  </style>
+</head>
+<body>
+   
+    <header class="navbar">
+    <div class="logo-container">
+      <img src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-2e5c-61f8-afaa-5c845c0a8cad/raw?se=2025-08-01T17%3A39%3A22Z&sp=r&sv=2024-08-04&sr=b&scid=702f5606-8d53-5882-94f4-cdf946e50c2f&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-01T16%3A03%3A15Z&ske=2025-08-02T16%3A03%3A15Z&sks=b&skv=2024-08-04&sig=vCjxNCOKrLKKTmMthoIkTXBQmwUbJOtVIT6JTTwauA8%3D" alt="LogoFastTravel">
+      <div class="logo">Fast Travel</div>
+    </div>
+    <nav class="nav-links">
+      <a href="Web.html" class="Menu-Button">Home</a>
+      <a href="HotelPage2.html" class="Menu-Button">Room</a>
+      <a href="hotel3.html" class="Menu-Button">Promotion</a>
+      <a href="Contact.html" class="Menu-Button">Contact</a>
+    </nav>
+  </header>
+
+  <div class="sidebar-filter">
+    <div class="filter-section">
+      <h4>ตัวกรองของท่าน</h4>
+      <label><input type="checkbox"> ไม่ต้องใช้บัตรเครดิตในการจอง</label>
+    </div>
+
+    <div class="filter-section">
+      <h4>ตัวกรองยอดนิยมสำหรับที่พักในพัทยา</h4>
+      <label><input type="checkbox"> ระเบียง/ชานเรือน</label>
+      <label><input type="checkbox"> ตู้เย็น</label>
+      <label><input type="checkbox"> โทรทัศน์</label>
+      <label><input type="checkbox"> ห้องออกกำลังกาย/ฟิตเนส</label>
+      <label><input type="checkbox"> คะแนนจากนักท่องเที่ยว: 8+ ดีเยี่ยม</label>
+      <label><input type="checkbox"> ยกเลิกการจองฟรี</label>
+    </div>
+
+    <div class="filter-section">
+      <h4>ประเภทที่พัก</h4>
+      <label><input type="checkbox"> อพาร์ตเมนต์</label>
+      <label><input type="checkbox"> โรงแรม</label>
+      <label><input type="checkbox"> รีสอร์ต</label>
+    </div>
+
+    <div class="price-range">
+      <h4>ราคาเริ่มต้น</h4>
+      <input type="number" placeholder="฿ 0">
+      <input type="number" placeholder="฿ 599,730">
+    </div>
+  </div>
+
+
+  <div class="main-content">
+    <h1>โรงแรมแนะนำ</h1>
+    <div class="hotel-list">
+
+      <div class="hotel-card">
+        <img src="https://lens.usercontent.google.com/image?vsrid=CICAxfGjxrj12QEQAhgBIiRhNGFlMWQ4MS03OGRmLTRiMGYtOWMwOS1jMjhkMmFlNDZiNjcyBiICc2QoFziV8suoh-qOAw&gsessionid=HBMJalPphbfREw6xmXQxSAkZAwD9SJ0YcKHO8jUqYhkFDSIxoE2MkA" alt="ภาพโรงแรม" class="hotel-image">
+        <div class="hotel-info">
+          <div class="hotel-name">โรงแรมแฮปปี้สเตย์ (Happy Stay Hotel)</div>
+          <div class="hotel-Address">123 ถนนสุขุมวิท, เขตเมือง, จังหวัดชลบุรี 20000</div>
+          <div class="hotel-description">ใกล้ทะเล บรรยากาศดี มีอาหารเช้าฟรี และบริการ Wi-Fi</div>
+          <div class="hotel-price">ราคาเริ่มต้น: 1,200 บาท/คืน</div>
+          <a href="hotel3.html" class="book-btn">จองเลย</a>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://lens.usercontent.google.com/image?vsrid=CPyanaTans2DRRACGAEiJDFiNTFiMGVjLWIyZDItNDBlMy1iYzQyLTFkYjVmYzg2NGUyNTIGIgJzZCgMOMzpjbiH6o4D&gsessionid=yjjiFDBntQ3UDmxIBM9gYNLJckReguttnpBtukREZTpf2ZKEinoCDw" alt="ภาพโรงแรม" class="hotel-image">
+        <div class="hotel-info">
+          <div class="hotel-name">เนินเขา รีสอร์ท</div>
+          <div class="hotel-Address">129 ถนนสุขุมวิท, เขตเมือง, จังหวัดชลบุรี 20000</div>
+          <div class="hotel-description">อยู่บนเนินเขา วิวธรรมชาติสวยงาม เหมาะแก่การพักผ่อน</div>
+          <div class="hotel-price">ราคาเริ่มต้น: 950 บาท/คืน</div>
+          <a href="hotel3.html" class="book-btn">จองเลย</a>
+        </div>
+      </div>
+</div>
+      <div class="hotel-card">
+        <img src="https://lens.usercontent.google.com/image?vsrid=CPGSyea0pZHdRRACGAEiJGFkNjkxNjQzLTY2YTAtNDYzMS04NTUzLWNhNmFiZDY4NDBmNTIGIgJzZCgSOLm6wMyH6o4D&gsessionid=ASbHUNTBeOHRMT1TyHsxBzkHRKNfYONAJvfTaUK0nD3_zO6yugDW7A" alt="ภาพโรงแรม" class="hotel-image">
+        <div class="hotel-info">
+          <div class="hotel-name">Family Resort</div>
+          <div class="hotel-Address">113 ถนนสุขุมวิท, เขตเมือง, จังหวัดชลบุรี 20000</div>
+          <div class="hotel-description">บรรยากาศสงบ เหมาะสำหรับครอบครัว และผู้ที่ชอบธรรมชาติ</div>
+          <div class="hotel-price">ราคาเริ่มต้น: 1,500 บาท/คืน</div>
+          <a href="hotel3.html" class="book-btn">จองเลย</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
